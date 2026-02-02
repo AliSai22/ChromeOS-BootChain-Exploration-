@@ -1,76 +1,69 @@
-# ChromeOS-BootChain-Exploration-
-Overview
+# ChromeOS-BootChain-Exploration - Practical Study
 
-This repository documents a hands‑on study of ChromeOS security mechanisms, focusing on the boot process, system integrity, and the design decisions behind ChromeOS’s locked‑down model.
+## Overview
+This repository documents a **hands-on study of ChromeOS security mechanisms**, focusing on:
 
-The work is based on direct experimentation and observation on personally owned hardware, combined with documentation review and analysis. The goal was not just to read about ChromeOS security, but to understand how it behaves in practice.
+- Boot process
+- System integrity
+- Design decisions behind ChromeOS’s locked-down model
 
-Motivation
+The work is based on **direct experimentation on hardware I own**, combined with documentation review and analysis. The goal was not just to read about ChromeOS security, but to **observe its behavior and learn from it**.
 
-ChromeOS is often described as “locked down,” but that description alone doesn’t explain how the platform enforces integrity or why certain design choices were made.
+---
+
+## Motivation
+ChromeOS is often described as “locked down,” but that doesn’t explain *how* the platform enforces integrity or *why* certain design choices exist.
 
 This study was driven by:
 
-Interest in OS‑level security and boot integrity
+- Interest in OS-level security and boot integrity
+- Curiosity about verified boot and firmware trust chains
+- Comparing ChromeOS’s security model to Linux and Windows
+- Understanding security trade-offs when protections are relaxed
 
-Curiosity about verified boot and firmware trust chains
+---
 
-Comparing ChromeOS’s security model to traditional Linux and Windows systems
+## Scope
+This repository focuses on **analysis and observations**, not instructions.
 
-Understanding what changes, from a security perspective, when platform protections are relaxed
+It intentionally excludes:
 
-Scope
+- Step-by-step modification or bypass guides
+- Automated tools or scripts for disabling protections
+- Any content related to managed, enterprise, or school devices
 
-This repository focuses on analysis and outcomes, not instructions.
+All experiments were conducted in a **controlled, ethical context** on hardware I own.
 
-It intentionally avoids:
+---
 
-Step‑by‑step modification or bypass guides
+## Areas of Study
+Topics covered include:
 
-Automated tools or scripts for disabling protections
+- ChromeOS boot chain and trust flow (firmware → kernel → OS verification)
+- Verified Boot stages and integrity enforcement
+- Partition layout and read-only design choices
+- Developer Mode from a security perspective
+- Protections preventing persistent tampering
+- Platform recovery and detection mechanisms
+- High-level threat modeling
 
-Any content related to managed, enterprise, or school devices
+Where appropriate, concepts are tied to **real observations during testing**.
 
-All observations were made in a controlled, ethical context on hardware I own.
+---
 
-Areas of Study
+## Observations & Takeaways
+Key conclusions:
 
-Topics covered in this repository include:
+- ChromeOS security relies heavily on **preventing silent persistence**
+- Verified Boot significantly limits long-term modification
+- Relaxing protections introduces clear integrity trade-offs
+- Security is designed around **user recovery**, not customization
+- Many restrictions are architectural, not superficial
 
-ChromeOS boot chain and trust flow
-(firmware → kernel → OS verification)
+These design choices are consistent with ChromeOS’s threat model and target user base.
 
-Verified Boot stages and integrity enforcement
+---
 
-Partition layout and read‑only design choices
-
-Developer Mode from a security perspective
-
-What protections prevent persistent tampering
-
-How ChromeOS prioritizes recovery and detection
-
-High‑level threat modeling of the platform
-
-Where appropriate, concepts are tied back to real behavior observed during testing.
-
-Observations & Takeaways
-
-Some key conclusions from this study:
-
-ChromeOS security relies heavily on preventing silent persistence
-
-Verified Boot significantly limits long‑term modification
-
-Relaxing protections introduces clear integrity tradeoffs
-
-Platform security is designed around user recovery, not customization
-
-Many restrictions are architectural, not superficial
-
-These design choices make sense when evaluated against ChromeOS’s threat model and target user base.
-
-Disclaimer
-
-This repository is provided for educational and research purposes only.
-It does not encourage or support violating device policies, terms of service, or applicable laws.
+## Disclaimer
+This repository is provided for **educational and research purposes only**.  
+It does **not** encourage or support violating device policies, terms of service, or applicable laws.
